@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Tu rol</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container role-page">
+    <h2>Hola, {{ nombre }}</h2>
+
+    <div class="role-box">
+      <p class="mensaje">{{ mensaje }}</p>
+    </div>
+
+    <p class="instruccion">Cuando termines, cierra esta pestaña o presiona "Volver al inicio".</p>
+
+    <a href="/" class="btn">Volver al inicio</a>
+  </div>
+</body>
+</html>

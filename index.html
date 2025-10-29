@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Impostor Futbolista</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>⚽ Impostor Futbolista</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash">
+        {% for m in messages %}
+          <p>{{ m }}</p>
+        {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <label>Número de jugadores (mínimo 4)</label>
+      <input type="number" name="jugadores" min="4" required>
+
+      <label>Número de impostores</label>
+      <input type="number" name="impostores" min="1" required>
+
+      <button type="submit">Generar roles y enlaces secretos</button>
+    </form>
+
+    <p class="nota">Después de generar verás enlaces secretos para cada jugador. Pasa cada enlace al jugador correspondiente (o abre en privado).</p>
+  </div>
+</body>
+</html>

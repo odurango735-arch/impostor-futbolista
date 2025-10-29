@@ -1,0 +1,71 @@
+/* style.css - diseño simple y agradable */
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #0f1724, #112240);
+  color: #f3f4f6;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 92%;
+  max-width: 760px;
+  background: rgba(20,28,45,0.95);
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+  text-align: center;
+}
+h1 { margin-top: 0; }
+form { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 18px 0; }
+label { align-self: flex-start; font-weight: bold; margin-left: 6px; }
+input[type="number"] {
+  width: 220px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+button, .btn, a.button {
+  background: #00c897;
+  color: #042027;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover, .btn:hover { filter: brightness(0.95); }
+
+/* Roles list */
+.lista { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.fila {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.03);
+  padding: 12px;
+  border-radius: 8px;
+}
+.fila .nombre { font-weight: bold; }
+.fila .estado { font-size: 0.9rem; color: #9aa4b2; }
+.fila .acciones { display:flex; gap:8px; }
+.fila .acciones a { background: transparent; color: #00c897; border: 1px solid rgba(0,200,151,0.15); padding: 8px; border-radius: 6px; text-decoration: none; }
+
+/* Role page */
+.role-page .role-box {
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 16px 0;
+}
+.role-page .mensaje { font-size: 1.2rem; font-weight: bold; }
+
+/* Flash messages */
+.flash { background: #2b394b; padding: 8px; border-radius: 8px; margin: 12px 0; color: #ffcc66; }
+.nota { font-size: 0.9rem; color: #b9c2cc; margin-top: 10px; }
+.instruccion { color: #b9c2cc; font-size: 0.9rem; margin-top: 10px;}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Enlaces secretos - Among Us Futbolista</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    // Función simple para copiar enlace al portapapeles
+    function copiar(texto) {
+      navigator.clipboard.writeText(texto).then(() => {
+        alert('Enlace copiado al portapapeles. Pásalo al jugador correspondiente.');
+      }).catch(() => {
+        alert('No se pudo copiar automáticamente. Selecciona y copia manualmente: ' + texto);
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>🔒 Enlaces secretos</h1>
+    <p>Abre o comparte cada enlace únicamente con el jugador correspondiente. No reveles roles aquí.</p>
+
+    <div class="lista">
+      {% for p in jugadores %}
+        <div class="fila">
+          <div class="nombre">{{ p.nombre }}</div>
+          <div class="estado">{{ 'Visto' if p.visto else 'No visto' }}</div>
+          <div class="acciones">
+            <button onclick="copiar('{{ p.link }}')">Copiar enlace</button>
+            <a href="{{ p.link }}" target="_blank">Abrir</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <a href="/" class="btn">Volver al inicio</a>
+  </div>
+</body>
+</html>
