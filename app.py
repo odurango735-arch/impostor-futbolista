@@ -109,7 +109,10 @@ def ver_role(token):
 
     return render_template("role.html", nombre=info["nombre"], mensaje=mensaje, visto=info["visto"])
 
+import os
 
 if __name__ == "__main__":
-    # Modo debug para desarrollo local; quítalo o pon False si lo subes a producción.
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render asigna este puerto automáticamente
+    app.run(host="0.0.0.0", port=port)
+
+
